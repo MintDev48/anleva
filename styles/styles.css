@@ -1,0 +1,152 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitar el desbordamiento horizontal */
+}
+
+
+
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+
+  .typewriter-container {
+    text-align: center;
+    font-size: 2rem;
+    color: yellow;
+    overflow: hidden; /* Ensures text is clipped */
+    white-space: nowrap; /* Prevents text wrapping */
+    border-right: 0.15em solid transparent; /* Adds the cursor effect */
+  }
+  .cursor {
+    display: inline-block;
+    animation: blink 0.75s step-end infinite; /* Blinking cursor */
+  }
+  @keyframes blink {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black;
+    }
+  }
+
+
+
+  .fade-slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeSlideUp 3s ease-out forwards;
+  }
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+  
+
+  /* Animación de desvanecimiento y desplazamiento desde arriba */
+.fade-slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación de desvanecimiento y desplazamiento desde los lados */
+.fade-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+/* Estilo para el botón flotante de desplazamiento suave */
+#scroll-to-top {
+    display: none; /* Ocultar por defecto */
+    background-color: rgb(255, 208, 0); /* Color de fondo verde */
+    color: black; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Forma circular */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Alto del botón */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    cursor: pointer; /* Cursor de puntero */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Estilo para el botón cuando está en el viewport */
+#scroll-to-top.show {
+    display: block;
+}
+
+
+
+
+
+/* Estilización de la barra de desplazamiento en navegadores Webkit */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de la pista de la barra de desplazamiento */
+    border-radius: 10px; /* Radio del borde para la pista */
+}
+
+::-webkit-scrollbar-thumb {
+    background:  rgb(224, 194, 60); /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 10px; /* Radio del borde para el pulgar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 208, 0); /* Color del pulgar cuando se pasa el mouse sobre él */
+}
+
+
+nav {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con 70% de opacidad */
+}

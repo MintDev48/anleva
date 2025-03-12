@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=NertFont:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</head>
+
+<body class="bg-gray-800 text-gray-800 font-nertfont">
+
+    <!-- Barra de Navegación Fija -->
+    <nav class="fixed w-full bg-gray-900 text-white shadow-lg z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-yellow-500">Mi Portafolio</a>
+                </div>
+                <!-- Botón de Menú en Móvil -->
+                <div class="block lg:hidden">
+                    <button @click="open = !open" class="text-green-500 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Menú de Navegación -->
+                <div class="hidden lg:flex lg:items-center lg:justify-start w-full">
+                    <div class="flex items-center space-x-4">
+                        <a href="#home" class="px-3 py-2 text-lg text-white hover:text-yellow-500 rounded">Inicio</a>
+                        <a href="#projects" class="px-3 py-2 text-lg text-white hover:text-yellow-500 rounded">Proyectos</a>
+                        <a href="#skills" class="px-3 py-2 text-lg text-white hover:text-yellow-500 rounded">Habilidades</a>
+                        <a href="#profile" class="px-3 py-2 text-lg text-white hover:text-yellow-500 rounded">Perfil</a>
+                        <a href="#contact" class="px-3 py-2 text-lg text-white hover:text-yellow-500 rounded">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú desplegable en móvil -->
+        <div x-show="open" class="lg:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-white hover:bg-gray-700 rounded">Inicio</a>
+                <a href="#projects"
+                    class="block px-3 py-2 text-base font-medium text-white hover:bg-gray-700 rounded">Proyectos</a>
+                <a href="#skills"
+                    class="block px-3 py-2 text-base font-medium text-white hover:bg-gray-700 rounded">Habilidades</a>
+                <a href="#profile"
+                    class="block px-3 py-2 text-base font-medium text-white hover:bg-gray-700 rounded">Perfil</a>
+                <a href="#contact"
+                    class="block px-3 py-2 text-base font-medium text-white hover:bg-gray-700 rounded">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header (Sección de Introducción) -->
+    <header id="home" class="bg-gray-900 text-white h-screen flex flex-col justify-center items-center pt-4">
+        <img src="assets/yo.jpeg"
+            alt="Tu Foto" class="w-40 h-40 rounded-full border-4 border-yellow-500 mb-6 floating">
+            <div class="typewriter-container">
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-yellow-500" id="typewriter-text"></h1>
+            </div>
+            <p id="animated-text" class="text-lg sm:text-2xl mb-8 fade-slide-up">Ing. Andrea Ledesma</p>
+            <a href="#projects" class="bg-yellow-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-gray-800 font-semibold hover:bg-yellow-600 transition">Ver
+                Mis Proyectos</a>
+    </header>
+
+    <!-- Sección de Proyectos -->
+    <section id="projects" class="py-16 bg-gray-800 fade-slide-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-yellow-500">Mis Proyectos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300">
+                    <img src="assets/portafolio_web.png" alt="Proyecto 1" class="rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-400">Portafolio Web Moderno</h3>
+                    <p class="text-gray-400">Desarrollo de un portafolio web moderno y responsivo utilizando Tailwind CSS y JavaScript.</p>
+                        <!-- Botón de GitHub centrado -->
+                        <div class="flex justify-center mt-4">
+                            <a href="https://github.com/Miguel5858/portafolio" target="_blank" class="bg-green-500 text-gray-200 font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block mr-2" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.112.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.746.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.833 2.808 1.304 3.49.997.108-.774.42-1.305.76-1.606-2.665-.303-5.466-1.334-5.466-5.933 0-1.31.467-2.38 1.237-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.01-.324 3.31 1.23.957-.266 1.98-.399 3-.403 1.02.004 2.043.137 3 .403 2.298-1.554 3.307-1.23 3.307-1.23.654 1.653.242 2.873.12 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.804 5.625-5.476 5.922.432.372.816 1.102.816 2.222 0 1.606-.015 2.896-.015 3.293 0 .322.217.695.825.577C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+                                </svg>
+                                Ver en GitHub
+                            </a>
+                        </div>
+                </div>
+                
+                <!-- Proyecto 2 -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300">
+                    <img src="assets/app_cuestionario.png" alt="Proyecto 2" class="rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-400">Aplicación de Cuestionarios en Flutter</h3>
+                    <p class="text-gray-400">Desarrollo de una aplicación móvil para la creación y gestión de cuestionarios utilizando Flutter y Dart.</p>
+                     <!-- Botón de GitHub centrado -->
+                     <div class="flex justify-center mt-4">
+                        <a href="#" class="bg-green-500 text-gray-200 font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block mr-2" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.112.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.746.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.833 2.808 1.304 3.49.997.108-.774.42-1.305.76-1.606-2.665-.303-5.466-1.334-5.466-5.933 0-1.31.467-2.38 1.237-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.01-.324 3.31 1.23.957-.266 1.98-.399 3-.403 1.02.004 2.043.137 3 .403 2.298-1.554 3.307-1.23 3.307-1.23.654 1.653.242 2.873.12 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.804 5.625-5.476 5.922.432.372.816 1.102.816 2.222 0 1.606-.015 2.896-.015 3.293 0 .322.217.695.825.577C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            Ver en GitHub
+                        </a>
+                    </div>
+                </div>
+                
+             <!-- Proyecto 3 -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300">
+                    <img src="assets/api.png" alt="Proyecto 3" class="rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-400">API RESTful con Laravel</h3>
+                    <p class="text-gray-400">Desarrollo de una API RESTful robusta para la gestión de productos en Laravel Lomkit.</p>
+                    
+               <!-- Botón de GitHub centrado -->
+                    <div class="flex justify-center mt-4">
+                        <a href="https://github.com/Miguel5858/laravelRestApi" target="_blank" class="bg-green-500 text-gray-200 font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block mr-2" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.112.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.746.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.833 2.808 1.304 3.49.997.108-.774.42-1.305.76-1.606-2.665-.303-5.466-1.334-5.466-5.933 0-1.31.467-2.38 1.237-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.01-.324 3.31 1.23.957-.266 1.98-.399 3-.403 1.02.004 2.043.137 3 .403 2.298-1.554 3.307-1.23 3.307-1.23.654 1.653.242 2.873.12 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.804 5.625-5.476 5.922.432.372.816 1.102.816 2.222 0 1.606-.015 2.896-.015 3.293 0 .322.217.695.825.577C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            Ver en GitHub
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+<!-- Sección de Habilidades -->
+<section id="skills" class="py-16 bg-gray-900 text-gray-400 fade-slide-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-green-500">Mis Habilidades</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+            <div class="text-center hover:text-green-500 transition duration-300">
+                <img src="https://i.pinimg.com/originals/2d/3a/7d/2d3a7d7d1ad7adeded994de246f60c43.png" alt="Php"
+                    class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">PHP</h3>
+            </div>
+            <div class="text-center hover:text-green-500 transition duration-300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png"
+                    alt="Laravel" class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Laravel</h3>
+            </div>
+            <div class="text-center hover:text-green-500 transition duration-300">
+                <img src="https://img.icons8.com/color/480/flutter.png" alt="Flutter"
+                    class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Flutter</h3>
+            </div>
+            <div class="text-center hover:text-green-500 transition duration-300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" alt="Vue.js"
+                    class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Vue.js</h3>
+            </div>
+           
+            <div class="text-center hover:text-green-500 transition duration-300">
+                <img src="https://img.icons8.com/color/144/000000/html-5--v1.png" alt="HTML" class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">HTML</h3>
+            </div>
+            <div class="text-center hover:text-green-500 transition duration-300">
+                <img src="https://img.icons8.com/color/144/000000/css3.png" alt="CSS" class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">CSS</h3>
+            </div>
+
+          
+            <div class="text-center hover:text-green-500 transition duration-300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS"
+                    class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Tailwind CSS</h3>
+            </div>
+
+            <div class="text-center hover:text-green-500 transition duration-300">
+                <img src="https://img.icons8.com/color/144/000000/github.png" alt="GitHub" class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">GitHub</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ 
+
+<!-- Sección de Perfil -->
+<section id="profile" class="py-16 bg-gray-800 text-gray-400 fade-slide-right">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12 text-yellow-500">Perfil Profesional</h2>
+      
+      <!-- Descripción del Perfil -->
+      <div class="profile-description mb-6">
+        <p class="text-lg leading-relaxed mb-6">
+          Soy un <strong>desarrollador full stack</strong> con una sólida experiencia en la creación de aplicaciones web y móviles robustas y escalables. Tengo experiencia en el desarrollo de <strong>APIs en PHP utilizando Laravel</strong>, la creación de <strong>interfaces móviles con Flutter</strong>, y la gestión de <strong>bases de datos relacionales y no relacionales</strong>.
+        </p>
+        <p class="text-lg leading-relaxed">
+          Estoy comprometido con el aprendizaje continuo de nuevas tecnologías y herramientas para mejorar mis habilidades. Me enfoco en la <strong>calidad del código</strong> y en la <strong>satisfacción del cliente</strong>, adoptando buenas prácticas y principios de diseño para garantizar la eficiencia y mantenibilidad del software.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Sección de Contacto -->
+  <section id="contact" class="py-16 bg-gray-900 text-white fade-slide-up">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12 text-yellow-500">Contacto</h2>
+      <p class="text-lg leading-relaxed text-gray-300 mb-6 text-center">
+        Estoy disponible para trabajar en nuevos proyectos o colaborar en ideas innovadoras. No dudes en ponerte en contacto conmigo.
+      </p>
+      <!-- <div class="flex justify-center">
+        <a href="mailto:tuemail@example.com" class="bg-green-500 px-6 py-3 rounded-full text-white font-semibold hover:bg-green-600">Envíame un Email</a>
+      </div> -->
+    </div>
+  </section>
+
+
+  <!-- Botón de Desplazamiento Suave hacia Arriba -->
+<button id="scroll-to-top" class="fixed bottom-20 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-105">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7-7-7 7"></path>
+    </svg>
+</button>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/593984010208" target="_blank" class="fixed bottom-3 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.09.54 4.1 1.56 5.9L0 24l6.42-1.56a11.89 11.89 0 0 0 5.58 1.42c6.63 0 12-5.37 12-12 0-3.22-1.26-6.26-3.48-8.52zM12 22.3c-1.76 0-3.52-.46-5.04-1.32l-.36-.2-3.82.94.94-3.74-.24-.38A9.93 9.93 0 0 1 2 12c0-5.5 4.5-10 10-10 2.66 0 5.18 1.04 7.08 2.92A9.92 9.92 0 0 1 22 12c0 5.5-4.5 10-10 10zm5.22-7.48c-.28-.14-1.66-.82-1.92-.92-.26-.1-.44-.14-.62.14-.18.28-.72.92-.88 1.1-.16.18-.32.2-.6.06-.28-.14-1.18-.44-2.25-1.4a8.42 8.42 0 0 1-1.54-1.88c-.16-.26 0-.4.12-.54.12-.12.26-.32.38-.48.12-.16.18-.28.28-.46.1-.18.04-.34-.02-.48-.06-.14-.62-1.5-.84-2.06-.22-.54-.44-.46-.6-.46h-.5c-.18 0-.48.06-.74.34-.26.28-.98.96-.98 2.34s1 2.72 1.14 2.92c.14.18 1.98 3.04 4.8 4.28.66.28 1.18.44 1.58.56.66.2 1.26.16 1.74.1.54-.08 1.66-.68 1.9-1.34.24-.66.24-1.22.18-1.34-.06-.12-.24-.18-.5-.3z"/>
+    </svg>
+</a>
+
+
+   <!-- Pie de Página -->
+   <footer class="bg-gray-900 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p id="year">&copy;</p>
+    </div>
+</footer>
+
+<!-- Script para actualizar el año automáticamente -->
+<script src="js/functions.js"></script>
+</body>
+
+</html>
